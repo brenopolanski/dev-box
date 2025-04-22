@@ -1,0 +1,64 @@
+{
+  "name": "react-lib",
+  "version": "0.1.0",
+  "description": "React library",
+  "license": "MIT",
+  "author": "Your Name <your.email@example.com>",
+  "keywords": [
+    "react",
+    "typescript",
+    "library",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenopolanski/react-lib-template.git"
+  },
+  "homepage": "https://github.com/brenopolanski/react-lib-template#readme",
+  "bugs": {
+    "url": "https://github.com/brenopolanski/react-lib-template/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "pnpm lint --fix",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "react": "^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc",
+    "react-dom": "^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-sort-keys-custom-order-fix": "^0.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}

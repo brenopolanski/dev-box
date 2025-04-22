@@ -1,0 +1,24 @@
+{
+  "name": "react-lib-template",
+  "description": "React library template",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+   "engines": {
+    "node": ">=18",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "build": "turbo build",
+    "clean": "/bin/bash scripts/clean.sh",
+    "dev": "turbo dev",
+    "format": "prettier --write .",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint -- --fix",
+    "prepublishOnly": "pnpm build --filter=react-lib",
+    "start": "turbo start"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.0"
+  }
+}

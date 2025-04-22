@@ -1,0 +1,15 @@
+# Ignore artifacts:
+.next
+.turbo
+.vercel
+node_modules
+public
+build
+dist
+coverage
+
+# Ignore package files:
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
