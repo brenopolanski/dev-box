@@ -1,9 +1,10 @@
 {
-  "name": "react-lib-template",
-  "description": "React library template",
+  "name": "dev-box",
+  "description": "A powerful and customizable developer toolbox for React applications that helps with debugging, inspecting, and analyzing web pages.",
+  "license": "MIT",
   "private": true,
   "packageManager": "pnpm@9.0.0",
-   "engines": {
+  "engines": {
     "node": ">=18",
     "pnpm": ">=9.0.0"
   },
@@ -14,7 +15,7 @@
     "format": "prettier --write .",
     "lint": "turbo lint",
     "lint:fix": "turbo lint -- --fix",
-    "prepublishOnly": "pnpm build --filter=react-lib",
+    "prepublishOnly": "pnpm build --filter=dev-box",
     "start": "turbo start"
   },
   "devDependencies": {

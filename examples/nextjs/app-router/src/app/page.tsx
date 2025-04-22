@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { Button } from 'react-lib'
 
 export default function Home() {
   return (
@@ -35,9 +34,6 @@ export default function Home() {
           >
             Read our docs
           </a>
-
-          {/* react-lib component */}
-          <Button>Click me</Button>
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">

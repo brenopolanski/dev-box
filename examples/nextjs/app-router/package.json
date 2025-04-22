@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@breno.polanski/dev-box": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-lib": "workspace:*",
     "next": "15.3.1"
   },
   "devDependencies": {
