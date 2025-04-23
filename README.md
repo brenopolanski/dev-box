@@ -1,6 +1,8 @@
-# React Library Template
+# 🛠️ DevBox
 
-React library template using pnpm, Turborepo, TypeScript, tsup, ESLint, and Prettier.
+A powerful and customizable developer toolbox for React applications that helps with debugging, inspecting, and analyzing web pages.
+
+https://github.com/user-attachments/assets/aa546c62-f2ec-4063-898d-b01558972a2f
 
 ## ✨ Features
 
@@ -9,7 +11,8 @@ React library template using pnpm, Turborepo, TypeScript, tsup, ESLint, and Pret
 - ⚛️ **React**: JavaScript library for building user interfaces.
 - 🔒 **TypeScript**: Typed superset of JavaScript.
 - 🛠️ **tsup**: Simple and fast TypeScript bundler powered by esbuild.
-- 💅 **ESLint & Prettier**: Code linting and formatting.
+- 💅 **TailwindCSS**: Utility-first CSS framework.
+- 📋 **ESLint & Prettier**: Code linting and formatting.
 
 ## 📁 Project Structure
 
@@ -18,8 +21,9 @@ The repository is structured as a monorepo:
 ```
 .
 ├── examples/                 # Example projects using the library
-│   └── basic/                # Basic example
-├── react-lib/                # The actual React library source code
+│   └── nextjs/               # Next.js examples
+│       └── app-router/       # Next.js App Router example
+├── dev-box/                  # The developer toolbox source code
 │   ├── src/                  # Library source files
 │   ├── package.json          # Library package configuration
 │   └── tsup.config.ts        # tsup build configuration
@@ -35,8 +39,8 @@ The repository is structured as a monorepo:
 └── turbo.json                # Turborepo configuration
 ```
 
-- **`react-lib/`**: Contains the source code for your React library. This is where you'll build your components, hooks, etc.
-- **`examples/`**: Contains example projects demonstrating how to use the library. This is useful for testing and showcasing features.
+- **`dev-box/`**: Contains the source code for the developer toolbox library. This is where you'll find all the components, utilities, and tools for debugging and analyzing web pages.
+- **`examples/`**: Contains example projects demonstrating how to use the library in different frameworks and scenarios.
 
 ## 🚀 Getting Started
 
@@ -50,8 +54,8 @@ The repository is structured as a monorepo:
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/brenopolanski/react-lib-template.git
-cd react-lib-template
+git clone git@github.com:brenopolanski/dev-box.git
+cd dev-box
 pnpm install
 ```
 
@@ -60,13 +64,13 @@ pnpm install
 To start the development server for the library (watches for changes and rebuilds):
 
 ```bash
-pnpm dev --filter=react-lib
+pnpm dev --filter=dev-box
 ```
 
-To start the development server for an example project (e.g., `basic`):
+To start the development server for an example project (e.g., Next.js app router):
 
 ```bash
-pnpm dev --filter=basic
+pnpm dev --filter=nextjs-app-router
 ```
 
 ### Build
@@ -74,7 +78,7 @@ pnpm dev --filter=basic
 To build the library for production:
 
 ```bash
-pnpm build --filter=react-lib
+pnpm build --filter=dev-box
 ```
 
 To build all packages in the monorepo:
@@ -89,6 +93,12 @@ To lint the codebase:
 
 ```bash
 pnpm lint
+```
+
+To fix linting issues:
+
+```bash
+pnpm lint:fix
 ```
 
 To format the codebase:
