@@ -1,69 +1,149 @@
-import Image from 'next/image'
+'use client'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={180} height={38} priority />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{' '}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">Save and see your changes instantly.</li>
-        </ol>
+  const triggerConsoleLogs = () => {
+    console.log('Regular log message')
+    console.info('Info message')
+    console.warn('Warning message')
+    console.error('Error message')
+    console.debug('Debug message')
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image className="dark:invert" src="/vercel.svg" alt="Vercel logomark" width={20} height={20} />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/file.svg" alt="File icon" width={16} height={16} />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/window.svg" alt="Window icon" width={16} height={16} />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
-          Go to nextjs.org →
-        </a>
+    // Object logging example
+    console.log('User object:', {
+      id: 1,
+      email: 'john@example.com',
+      name: 'John Doe',
+      preferences: {
+        notifications: true,
+        theme: 'dark',
+      },
+    })
+
+    // Array logging
+    console.table(['Apple', 'Banana', 'Cherry', 'Date'])
+
+    // Performance measurement
+    console.time('Timer test')
+    setTimeout(() => {
+      console.timeEnd('Timer test')
+    }, 500)
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-100 font-sans">
+      <div className="mx-auto max-w-6xl p-8">
+        <header className="mb-12 text-center">
+          <h1 className="mb-4 text-4xl font-bold text-blue-800">DevBox Demo</h1>
+          <p className="text-lg text-gray-600">A developer toolbox for React applications</p>
+        </header>
+
+        <section className="mb-12 rounded-lg bg-white p-8 shadow-lg">
+          <h2 className="mb-6 text-2xl font-semibold text-gray-800">Available Tools</h2>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-md bg-blue-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-blue-700">Screen Size</h3>
+              <p className="text-sm text-gray-600">Shows current viewport dimensions</p>
+            </div>
+
+            <div className="rounded-md bg-green-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-green-700">Environment Mode</h3>
+              <p className="text-sm text-gray-600">Displays current environment (development/production)</p>
+            </div>
+
+            <div className="rounded-md bg-purple-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-purple-700">Cursor Position</h3>
+              <p className="text-sm text-gray-600">Shows real-time cursor coordinates</p>
+            </div>
+
+            <div className="rounded-md bg-yellow-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-yellow-700">Date & Time</h3>
+              <p className="text-sm text-gray-600">Displays current date and time</p>
+            </div>
+
+            <div className="rounded-md bg-red-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-red-700">CSS Debug</h3>
+              <p className="text-sm text-gray-600">Highlight HTML elements for CSS debugging</p>
+            </div>
+
+            <div className="rounded-md bg-indigo-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-indigo-700">Ruler</h3>
+              <p className="text-sm text-gray-600">Measure dimensions and distances on the page</p>
+            </div>
+
+            <div className="rounded-md bg-pink-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-pink-700">Inspector</h3>
+              <p className="text-sm text-gray-600">Inspect and analyze HTML elements</p>
+            </div>
+
+            <div className="rounded-md bg-teal-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-teal-700">Design Mode</h3>
+              <p className="text-sm text-gray-600">Edit content directly in the browser</p>
+            </div>
+
+            <div className="rounded-md bg-orange-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-orange-700">Draw</h3>
+              <p className="text-sm text-gray-600">Draw and annotate on the page</p>
+            </div>
+
+            <div className="rounded-md bg-cyan-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-cyan-700">SEO</h3>
+              <p className="text-sm text-gray-600">Analyze page for SEO optimization</p>
+            </div>
+
+            <div className="rounded-md bg-lime-50 p-4 shadow">
+              <h3 className="mb-2 font-medium text-lime-700">Console</h3>
+              <p className="text-sm text-gray-600">View console logs directly on the page</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-12 rounded-lg bg-white p-8 shadow-lg">
+          <h2 className="mb-6 text-2xl font-semibold text-gray-800">Testing Area</h2>
+          <p className="mb-4">This area contains various HTML elements to test the DevBox tools:</p>
+
+          <div className="space-y-6">
+            <div className="rounded border border-gray-200 p-4">
+              <h3 className="mb-2 text-xl font-medium">Text Elements</h3>
+              <p>Regular paragraph text for testing.</p>
+              <p className="text-sm text-gray-500">Small text with gray color.</p>
+              <p className="text-lg font-bold text-blue-600">Larger bold text with blue color.</p>
+            </div>
+
+            <div className="rounded border border-gray-200 p-4">
+              <h3 className="mb-2 text-xl font-medium">Interactive Elements</h3>
+              <button className="mr-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">Button</button>
+              <a className="text-blue-500 hover:underline" href="#">
+                Link
+              </a>
+              <div className="mt-4">
+                <label className="mr-2">Checkbox:</label>
+                <input type="checkbox" />
+              </div>
+
+              {/* Console trigger button */}
+              <div className="mt-4">
+                <button
+                  className="mt-2 rounded bg-purple-500 px-4 py-2 text-white hover:bg-purple-600"
+                  onClick={triggerConsoleLogs}
+                >
+                  Trigger Console Logs
+                </button>
+              </div>
+            </div>
+
+            <div className="rounded border border-gray-200 p-4">
+              <h3 className="mb-2 text-xl font-medium">Image</h3>
+              <div className="flex h-40 w-full items-center justify-center bg-gray-300 text-center">
+                <span>Placeholder Image</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer className="bg-gray-800 p-6 text-center text-white">
+        <p>DevBox: A developer toolbox for React applications</p>
       </footer>
     </div>
   )
