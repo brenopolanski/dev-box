@@ -1,1 +1,7 @@
-@import 'tailwindcss' prefix(tw);
+/* @import 'tailwindcss' prefix(tw); */
+
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+/* See: https: //tailwindcss.com/docs/preflight#disabling-preflight */
+/* @import "tailwindcss/preflight.css" layer(base); */
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
