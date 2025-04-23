@@ -14,7 +14,7 @@ export const ClearDrawingButton = () => {
 
   return (
     <button
-      className={`${CSS_NAMESPACE}-clear-button fixed right-4 top-4 z-[2147483646] cursor-pointer bg-red-500/80 px-3 py-1 text-xs text-white hover:bg-red-500`}
+      className={`${CSS_NAMESPACE}-clear-button tw:fixed tw:right-4 tw:top-4 tw:z-[2147483646] tw:cursor-pointer tw:bg-red-500/80 tw:px-3 tw:py-1 tw:text-xs tw:text-white tw:hover:tw:bg-red-500`}
       onClick={() => clearDrawings(isActive)}
     >
       Clear Drawing

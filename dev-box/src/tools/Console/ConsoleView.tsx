@@ -13,35 +13,35 @@ export const ConsoleView = () => {
   }
 
   return (
-    <div className="border-t border-white/20">
-      <div className="flex items-center justify-between p-2">
-        <span className="text-xs font-bold">Console</span>
+    <div className="tw:border-t tw:border-white/20">
+      <div className="tw:flex tw:items-center tw:justify-between tw:p-2">
+        <span className="tw:text-xs tw:font-bold">Console</span>
         <button
-          className="cursor-pointer text-xs text-white/60 outline-none hover:text-white"
+          className="tw:cursor-pointer tw:text-xs tw:text-white/60 tw:outline-none tw:hover:tw:text-white"
           title="Clear Console"
           onClick={clearConsoleLogs}
         >
           Clear
         </button>
       </div>
-      <div className="max-h-32 overflow-y-auto border-t border-white/20 bg-black/30 p-2">
+      <div className="tw:max-h-32 tw:overflow-y-auto tw:border-t tw:border-white/20 tw:bg-black/30 tw:p-2">
         {consoleLogs.length === 0 ? (
-          <div className="text-center text-xs text-white/40">No console logs</div>
+          <div className="tw:text-center tw:text-xs tw:text-white/40">No console logs</div>
         ) : (
           consoleLogs.map((log, index) => (
             <div
               key={index}
-              className={`mb-1 whitespace-pre-wrap font-mono text-xs ${
+              className={`tw:mb-1 tw:whitespace-pre-wrap tw:font-mono tw:text-xs ${
                 log.type === 'error'
-                  ? 'text-red-400'
+                  ? 'tw:text-red-400'
                   : log.type === 'warn'
-                    ? 'text-yellow-400'
+                    ? 'tw:text-yellow-400'
                     : log.type === 'info'
-                      ? 'text-blue-400'
-                      : 'text-white'
+                      ? 'tw:text-blue-400'
+                      : 'tw:text-white'
               }`}
             >
-              <span className="mr-2 text-white/40">{log.timestamp.toLocaleTimeString()}</span>
+              <span className="tw:mr-2 tw:text-white/40">{log.timestamp.toLocaleTimeString()}</span>
               {log.message}
             </div>
           ))

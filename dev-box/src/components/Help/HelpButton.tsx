@@ -7,7 +7,7 @@ export const HelpButton = ({ className, ...props }: React.HTMLAttributes<HTMLBut
   return (
     <button
       className={cn(
-        `${CSS_NAMESPACE}-help-button flex h-full w-full cursor-pointer items-center justify-center bg-white/10 text-white/80 outline-none transition-colors hover:bg-white/20`,
+        `${CSS_NAMESPACE}-help-button tw:flex tw:h-full tw:w-full tw:cursor-pointer tw:items-center tw:justify-center tw:bg-white/10 tw:text-white/80 tw:outline-none tw:transition-colors tw:hover:bg-white/20`,
         className,
       )}
       title="Help"

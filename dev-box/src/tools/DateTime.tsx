@@ -24,7 +24,7 @@ export const DateTime = ({ className, ...props }: React.HTMLAttributes<HTMLDivEl
   }, [showDevBox])
 
   return (
-    <div className={cn(`${CSS_NAMESPACE}-date-time flex items-center gap-1`, className)} {...props}>
+    <div className={cn(`${CSS_NAMESPACE}-date-time tw:flex tw:items-center tw:gap-1`, className)} {...props}>
       <span aria-label="clock" role="img">
         🕒
       </span>

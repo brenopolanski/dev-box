@@ -30,19 +30,19 @@ export const InspectorPanel = () => {
       }}
     >
       {/* Element Tag */}
-      <div className="mb-2">
-        <span className="text-blue-400">&lt;{inspectedElement.element.tagName.toLowerCase()}</span>
+      <div className="tw:mb-2">
+        <span className="tw:text-blue-400">&lt;{inspectedElement.element.tagName.toLowerCase()}</span>
         {inspectedElement.element.id && (
-          <span className="text-orange-400"> id=&quot;{inspectedElement.element.id}&quot;</span>
+          <span className="tw:text-orange-400"> id=&quot;{inspectedElement.element.id}&quot;</span>
         )}
         {inspectedElement.element.classList.length > 0 && (
-          <span className="text-green-400">
+          <span className="tw:text-green-400">
             {' '}
             class=&quot;{formatClasses(inspectedElement.element.classList)}
             &quot;
           </span>
         )}
-        <span className="text-blue-400">&gt;</span>
+        <span className="tw:text-blue-400">&gt;</span>
       </div>
 
       {/* Box Model */}
@@ -50,37 +50,37 @@ export const InspectorPanel = () => {
         const dimensions = getElementDimensions(inspectedElement.element)
 
         return (
-          <div className="mb-2 border-t border-white/10 pt-2">
-            <div className="mb-1 text-xs font-bold text-white/60">
-              <span aria-label="box model" className="mr-1" role="img">
+          <div className="tw:mb-2 tw:border-t tw:border-white/10 tw:pt-2">
+            <div className="tw:mb-1 tw:text-xs tw:font-bold tw:text-white/60">
+              <span aria-label="box model" className="tw:mr-1" role="img">
                 📦
               </span>
               Box Model
             </div>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="tw:grid tw:grid-cols-2 tw:gap-2">
               <div>
-                <span className="text-white/60">Width: </span>
+                <span className="tw:text-white/60">Width: </span>
                 <span>{dimensions.width}px</span>
               </div>
               <div>
-                <span className="text-white/60">Height: </span>
+                <span className="tw:text-white/60">Height: </span>
                 <span>{dimensions.height}px</span>
               </div>
               <div>
-                <span className="text-white/60">Padding: </span>
+                <span className="tw:text-white/60">Padding: </span>
                 <span>
                   {dimensions.padding.top} {dimensions.padding.right} {dimensions.padding.bottom}{' '}
                   {dimensions.padding.left}
                 </span>
               </div>
               <div>
-                <span className="text-white/60">Margin: </span>
+                <span className="tw:text-white/60">Margin: </span>
                 <span>
                   {dimensions.margin.top} {dimensions.margin.right} {dimensions.margin.bottom} {dimensions.margin.left}
                 </span>
               </div>
               <div>
-                <span className="text-white/60">Border: </span>
+                <span className="tw:text-white/60">Border: </span>
                 <span>
                   {dimensions.border.top} {dimensions.border.right} {dimensions.border.bottom} {dimensions.border.left}
                 </span>
@@ -91,21 +91,21 @@ export const InspectorPanel = () => {
       })()}
 
       {/* Computed Styles */}
-      <div className="mb-2 border-t border-white/10 pt-2">
-        <div className="mb-1 text-xs font-bold text-white/60">
-          <span aria-label="computed styles" className="mr-1" role="img">
+      <div className="tw:mb-2 tw:border-t tw:border-white/10 tw:pt-2">
+        <div className="tw:mb-1 tw:text-xs tw:font-bold tw:text-white/60">
+          <span aria-label="computed styles" className="tw:mr-1" role="img">
             🎨
           </span>
           Computed Styles
         </div>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="tw:grid tw:grid-cols-2 tw:gap-2">
           {(() => {
             const computedStyle = window.getComputedStyle(inspectedElement.element)
             const relevantStyles = ['display', 'position', 'color', 'background-color', 'font-size', 'font-family']
 
             return relevantStyles.map((style) => (
               <div key={style}>
-                <span className="text-white/60">{style}: </span>
+                <span className="tw:text-white/60">{style}: </span>
                 <span>{computedStyle.getPropertyValue(style)}</span>
               </div>
             ))
@@ -123,35 +123,35 @@ export const InspectorPanel = () => {
         }
 
         return (
-          <div className="border-t border-white/10 pt-2">
-            <div className="mb-1 text-xs font-bold text-white/60">
-              <span aria-label="accessibility" className="mr-1" role="img">
+          <div className="tw:border-t tw:border-white/10 tw:pt-2">
+            <div className="tw:mb-1 tw:text-xs tw:font-bold tw:text-white/60">
+              <span aria-label="accessibility" className="tw:mr-1" role="img">
                 ♿
               </span>
               Accessibility
             </div>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="tw:grid tw:grid-cols-2 tw:gap-2">
               {a11y.role && (
                 <div>
-                  <span className="text-white/60">Role: </span>
+                  <span className="tw:text-white/60">Role: </span>
                   <span>{a11y.role}</span>
                 </div>
               )}
               {a11y.ariaLabel && (
                 <div>
-                  <span className="text-white/60">Label: </span>
+                  <span className="tw:text-white/60">Label: </span>
                   <span>{a11y.ariaLabel}</span>
                 </div>
               )}
               {a11y.ariaDescribedby && (
                 <div>
-                  <span className="text-white/60">Described by: </span>
+                  <span className="tw:text-white/60">Described by: </span>
                   <span>{a11y.ariaDescribedby}</span>
                 </div>
               )}
               {a11y.tabIndex && (
                 <div>
-                  <span className="text-white/60">Tab index: </span>
+                  <span className="tw:text-white/60">Tab index: </span>
                   <span>{a11y.tabIndex}</span>
                 </div>
               )}

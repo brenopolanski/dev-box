@@ -11,7 +11,7 @@ export const EmojiIcon = ({ className, emoji, label, ...props }: IEmojiIconProps
   const formattedLabel = label.toLowerCase().replace(/\s+/g, '-')
 
   return (
-    <span aria-label={formattedLabel} className={cn('inline-block', className)} role="img" {...props}>
+    <span aria-label={formattedLabel} className={cn('tw:inline-block', className)} role="img" {...props}>
       {emoji}
     </span>
   )

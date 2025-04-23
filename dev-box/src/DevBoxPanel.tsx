@@ -129,29 +129,29 @@ export const DevBoxPanel = ({
   }
 
   return (
-    <div className={`${CSS_NAMESPACE}-container relative`}>
+    <div className={`${CSS_NAMESPACE}-container tw:relative`}>
       {/* Container Content */}
       <Ruler.Selection />
       <Inspector.Panel />
       <Draw.ClearButton />
 
       <MaximizeButton
-        className={cn('border-0', {
-          'border-t border-l': position === 'bottom-right',
-          'border-t border-r': position === 'bottom-left',
-          flex: isMinimized,
-          hidden: !isMinimized,
+        className={cn('tw:border-0', {
+          'tw:border-t tw:border-l': position === 'bottom-right',
+          'tw:border-t tw:border-r': position === 'bottom-left',
+          'tw:flex': isMinimized,
+          'tw:hidden': !isMinimized,
         })}
         onClick={() => setIsMinimized(false)}
       />
 
       <div
         className={cn(
-          `${CSS_NAMESPACE}-panel border-primary/20 pointer-events-auto fixed bottom-0 z-[2147483647] w-fit bg-black/90 font-mono text-[12px] text-white`,
+          `${CSS_NAMESPACE}-panel tw:border-primary/20 tw:pointer-events-auto tw:fixed tw:bottom-0 tw:z-[2147483647] tw:w-fit tw:bg-black/90 tw:font-mono tw:text-[12px] tw:text-white`,
           {
-            hidden: isMinimized,
-            'left-0 border-t border-r': position === 'bottom-left',
-            'right-0 border-t border-l': position === 'bottom-right',
+            'tw:hidden': isMinimized,
+            'tw:left-0 tw:border-t tw:border-r': position === 'bottom-left',
+            'tw:right-0 tw:border-t tw:border-l': position === 'bottom-right',
           },
           className,
         )}
@@ -159,10 +159,10 @@ export const DevBoxPanel = ({
       >
         {/* Panel Info */}
         {visibleInfoFeatures > 0 && (
-          <table className={`${CSS_NAMESPACE}-panel-info w-full`}>
+          <table className={`${CSS_NAMESPACE}-panel-info tw:w-full`}>
             <tbody>
               <tr
-                className="grid divide-x divide-white/20"
+                className="tw:grid tw:divide-x tw:divide-white/20"
                 style={{
                   gridTemplateColumns: [
                     shouldShowScreenSize && 'minmax(0, 1fr)',
@@ -178,34 +178,34 @@ export const DevBoxPanel = ({
               >
                 {/* Screen Size */}
                 {shouldShowScreenSize && (
-                  <td className="flex items-center justify-center gap-1 px-2 py-1">
+                  <td className="tw:flex tw:items-center tw:justify-center tw:gap-1 tw:px-2 tw:py-1">
                     <ScreenSize />
                   </td>
                 )}
                 {/* Environment */}
                 {shouldShowEnvMode && (
-                  <td className="flex items-center justify-center gap-1 px-2 py-1">
+                  <td className="tw:flex tw:items-center tw:justify-center tw:gap-1 tw:px-2 tw:py-1">
                     <EnvMode />
                   </td>
                 )}
                 {/* Cursor Position */}
                 {shouldShowCursorPosition && (
-                  <td className="flex items-center justify-center gap-1 px-2 py-1 tabular-nums">
+                  <td className="tw:flex tw:items-center tw:justify-center tw:gap-1 tw:px-2 tw:py-1 tw:tabular-nums">
                     <CursorPosition />
                   </td>
                 )}
                 {/* Date Time */}
                 {shouldShowDateTime && (
-                  <td className="flex items-center justify-center gap-1 px-2 py-1 tabular-nums">
+                  <td className="tw:flex tw:items-center tw:justify-center tw:gap-1 tw:px-2 tw:py-1 tw:tabular-nums">
                     <DateTime />
                   </td>
                 )}
                 {/* Help Button */}
-                <td className="flex">
+                <td className="tw:flex">
                   <Help.Button onClick={() => setShowHelp(!showHelp)} />
                 </td>
                 {/* Minimize Button */}
-                <td className="flex">
+                <td className="tw:flex">
                   <MinimizeButton onClick={() => setIsMinimized(true)} />
                 </td>
               </tr>
@@ -220,10 +220,10 @@ export const DevBoxPanel = ({
 
         {/* Panel Buttons (Tools) */}
         {visibleButtonFeatures > 0 && (
-          <table className={`${CSS_NAMESPACE}-panel-buttons w-full border-t border-white/20`}>
+          <table className={`${CSS_NAMESPACE}-panel-buttons tw:w-full tw:border-t tw:border-white/20`}>
             <tbody>
               <tr
-                className="grid gap-2 px-2 py-1"
+                className="tw:grid tw:gap-2 tw:px-2 tw:py-1"
                 style={{ gridTemplateColumns: `repeat(${visibleButtonFeatures}, minmax(0, 1fr))` }}
               >
                 {/* CSS Debug Button */}

@@ -37,14 +37,18 @@ export const SeoModal = ({ isOpen = false, onClose }: ISeoModalProps) => {
     <dialog
       aria-labelledby="seo-modal-title"
       aria-modal="true"
-      className={`${CSS_NAMESPACE}-seo-modal fixed left-1/2 top-4 z-[2147483646] max-h-[calc(100vh-8rem)] w-full max-w-xl -translate-x-1/2 overflow-y-auto bg-black/90 p-4 font-mono text-sm text-white`}
+      className={`${CSS_NAMESPACE}-seo-modal tw:fixed tw:left-1/2 tw:top-4 tw:z-[2147483646] tw:max-h-[calc(100vh-8rem)] tw:w-full tw:max-w-xl tw:-translate-x-1/2 tw:overflow-y-auto tw:bg-black tw:p-4 tw:font-mono tw:text-sm tw:text-white`}
       open={isOpen}
     >
-      <div className="mb-4 flex items-center justify-between border-b border-white/20 pb-2">
-        <span className="text-lg font-bold" id="seo-modal-title">
+      <div className="tw:mb-4 tw:flex tw:items-center tw:justify-between tw:border-b tw:border-white/20 tw:pb-2">
+        <span className="tw:text-lg tw:font-bold" id="seo-modal-title">
           SEO Analysis
         </span>
-        <button aria-label="Close button" className="cursor-pointer text-white/60 hover:text-white" onClick={onClose}>
+        <button
+          aria-label="Close button"
+          className="tw:cursor-pointer tw:text-white/60 tw:hover:tw:text-white"
+          onClick={onClose}
+        >
           ✕
         </button>
       </div>

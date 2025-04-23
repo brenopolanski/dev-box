@@ -221,39 +221,41 @@ export const Seo = () => {
   }, [])
 
   const renderSection = (title: string, content: React.ReactNode) => (
-    <div className="mb-6">
-      <span className="mb-2 text-sm font-bold text-white/80">{title}</span>
-      <div className="bg-white/5 p-3">{content}</div>
+    <div className="tw:mb-6">
+      <span className="tw:mb-2 tw:text-sm tw:font-bold tw:text-white/80">{title}</span>
+      <div className="tw:bg-white/5 tw:p-3">{content}</div>
     </div>
   )
 
   return (
-    <div className="space-y-4">
+    <div className="tw:space-y-4">
       {/* Title & Description */}
       {renderSection(
         'Meta Information',
-        <div className="space-y-3">
+        <div className="tw:space-y-3">
           <div>
-            <div className="mb-1 text-xs text-white/60">
+            <div className="tw:mb-1 tw:text-xs tw:text-white/60">
               Title ({seoData.title.length} characters, {seoData.title.words} words)
               {isLengthError(seoData.title.length, 30, 65) && (
-                <span className="ml-2 text-red-500">(Should be between 30-65 characters)</span>
+                <span className="tw:ml-2 tw:text-red-500">(Should be between 30-65 characters)</span>
               )}
             </div>
-            <div className="break-all">{seoData.title.text || '❌ No title found'}</div>
+            <div className="tw:break-all">{seoData.title.text || '❌ No title found'}</div>
           </div>
           <div>
-            <div className="mb-1 text-xs text-white/60">
+            <div className="tw:mb-1 tw:text-xs tw:text-white/60">
               Description ({seoData.description.length} characters, {seoData.description.words} words)
               {isLengthError(seoData.description.length, 120, 320) && (
-                <span className="ml-2 text-red-500">(Should be between 120-320 characters)</span>
+                <span className="tw:ml-2 tw:text-red-500">(Should be between 120-320 characters)</span>
               )}
             </div>
-            <div className="break-all">{seoData.description.text || '❌ No description found'}</div>
+            <div className="tw:break-all">{seoData.description.text || '❌ No description found'}</div>
           </div>
           <div>
-            <div className="mb-1 text-xs text-white/60">Keywords ({seoData.keywords.values.length} values)</div>
-            <div className="break-all">
+            <div className="tw:mb-1 tw:text-xs tw:text-white/60">
+              Keywords ({seoData.keywords.values.length} values)
+            </div>
+            <div className="tw:break-all">
               {seoData.keywords.values.length > 0 ? seoData.keywords.values.join(', ') : '❌ No keywords found'}
             </div>
           </div>
@@ -263,14 +265,14 @@ export const Seo = () => {
       {/* URLs */}
       {renderSection(
         'URLs',
-        <div className="space-y-3">
+        <div className="tw:space-y-3">
           <div>
-            <div className="mb-1 text-xs text-white/60">Current URL</div>
-            <div className="break-all">{seoData.url.current}</div>
+            <div className="tw:mb-1 tw:text-xs tw:text-white/60">Current URL</div>
+            <div className="tw:break-all">{seoData.url.current}</div>
           </div>
           <div>
-            <div className="mb-1 text-xs text-white/60">Canonical URL</div>
-            <div className="break-all">{seoData.url.canonical || '❌ No canonical URL found'}</div>
+            <div className="tw:mb-1 tw:text-xs tw:text-white/60">Canonical URL</div>
+            <div className="tw:break-all">{seoData.url.canonical || '❌ No canonical URL found'}</div>
           </div>
         </div>,
       )}
@@ -278,18 +280,18 @@ export const Seo = () => {
       {/* Author, Publisher & Language */}
       {renderSection(
         'Document Information',
-        <div className="space-y-3">
+        <div className="tw:space-y-3">
           <div>
-            <div className="mb-1 text-xs text-white/60">Author</div>
-            <div className="break-all">{seoData.author || '❌ No author found'}</div>
+            <div className="tw:mb-1 tw:text-xs tw:text-white/60">Author</div>
+            <div className="tw:break-all">{seoData.author || '❌ No author found'}</div>
           </div>
           <div>
-            <div className="mb-1 text-xs text-white/60">Publisher</div>
-            <div className="break-all">{seoData.publisher || '❌ No publisher found'}</div>
+            <div className="tw:mb-1 tw:text-xs tw:text-white/60">Publisher</div>
+            <div className="tw:break-all">{seoData.publisher || '❌ No publisher found'}</div>
           </div>
           <div>
-            <div className="mb-1 text-xs text-white/60">Language</div>
-            <div className="break-all">{seoData.lang || '❌ No language specified'}</div>
+            <div className="tw:mb-1 tw:text-xs tw:text-white/60">Language</div>
+            <div className="tw:break-all">{seoData.lang || '❌ No language specified'}</div>
           </div>
         </div>,
       )}
@@ -297,14 +299,14 @@ export const Seo = () => {
       {/* Robots */}
       {renderSection(
         'Robots & Sitemap',
-        <div className="space-y-3">
+        <div className="tw:space-y-3">
           <div>
-            <div className="mb-1 text-xs text-white/60">Meta Robots</div>
+            <div className="tw:mb-1 tw:text-xs tw:text-white/60">Meta Robots</div>
             <div>{seoData.robots.content || '❌ No robots meta tag found'}</div>
           </div>
-          <div className="flex gap-4">
+          <div className="tw:flex tw:gap-4">
             <a
-              className="text-blue-400 hover:underline"
+              className="tw:text-blue-400 tw:hover:underline"
               href={seoData.robots.robotsTxt || ''}
               rel="noopener noreferrer"
               target="_blank"
@@ -312,7 +314,7 @@ export const Seo = () => {
               📄 robots.txt
             </a>
             <a
-              className="text-blue-400 hover:underline"
+              className="tw:text-blue-400 tw:hover:underline"
               href={seoData.robots.sitemapXml || ''}
               rel="noopener noreferrer"
               target="_blank"
@@ -326,25 +328,25 @@ export const Seo = () => {
       {/* Headers */}
       {renderSection(
         'Headers Structure',
-        <div className="space-y-2">
+        <div className="tw:space-y-2">
           {Object.entries(seoData.headers).map(([tag, headers]) => (
             <div key={tag}>
-              <div className="mb-1 text-xs text-white/60">
+              <div className="tw:mb-1 tw:text-xs tw:text-white/60">
                 {tag.toUpperCase()} ({headers.length})
                 {tag === 'h1' && headers.length !== 1 && (
-                  <span className="ml-2 text-red-500">(Should have exactly one H1)</span>
+                  <span className="tw:ml-2 tw:text-red-500">(Should have exactly one H1)</span>
                 )}
               </div>
               {headers.length > 0 ? (
-                <ul className="list-inside list-disc space-y-1">
+                <ul className="tw:list-inside tw:list-disc tw:space-y-1">
                   {headers.map((header, index) => (
-                    <li key={index} className="break-all">
+                    <li key={index} className="tw:break-all">
                       {header}
                     </li>
                   ))}
                 </ul>
               ) : (
-                <div className="text-white/40">No {tag.toUpperCase()} tags found</div>
+                <div className="tw:text-white/40">No {tag.toUpperCase()} tags found</div>
               )}
             </div>
           ))}
@@ -354,22 +356,22 @@ export const Seo = () => {
       {/* Images */}
       {renderSection(
         'Images',
-        <div className="grid grid-cols-4 gap-4">
+        <div className="tw:grid tw:grid-cols-4 tw:gap-4">
           <div>
-            <div className="text-2xl font-bold">{seoData.images.total}</div>
-            <div className="text-sm text-white/60">Total Images</div>
+            <div className="tw:text-2xl tw:font-bold">{seoData.images.total}</div>
+            <div className="tw:text-sm tw:text-white/60">Total Images</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-green-500">{seoData.images.withAlt}</div>
-            <div className="text-sm text-white/60">With ALT</div>
+            <div className="tw:text-2xl tw:font-bold tw:text-green-500">{seoData.images.withAlt}</div>
+            <div className="tw:text-sm tw:text-white/60">With ALT</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-red-500">{seoData.images.withoutAlt}</div>
-            <div className="text-sm text-white/60">Without ALT</div>
+            <div className="tw:text-2xl tw:font-bold tw:text-red-500">{seoData.images.withoutAlt}</div>
+            <div className="tw:text-sm tw:text-white/60">Without ALT</div>
           </div>
           <div>
-            <div className="text-2xl font-bold">{seoData.images.withTitle}</div>
-            <div className="text-sm text-white/60">With Title</div>
+            <div className="tw:text-2xl tw:font-bold">{seoData.images.withTitle}</div>
+            <div className="tw:text-sm tw:text-white/60">With Title</div>
           </div>
         </div>,
       )}
@@ -377,26 +379,26 @@ export const Seo = () => {
       {/* Links */}
       {renderSection(
         'Links',
-        <div className="grid grid-cols-5 gap-4">
+        <div className="tw:grid tw:grid-cols-5 tw:gap-4">
           <div>
-            <div className="text-2xl font-bold">{seoData.links.total}</div>
-            <div className="text-sm text-white/60">Total</div>
+            <div className="tw:text-2xl tw:font-bold">{seoData.links.total}</div>
+            <div className="tw:text-sm tw:text-white/60">Total</div>
           </div>
           <div>
-            <div className="text-2xl font-bold">{seoData.links.internal}</div>
-            <div className="text-sm text-white/60">Internal</div>
+            <div className="tw:text-2xl tw:font-bold">{seoData.links.internal}</div>
+            <div className="tw:text-sm tw:text-white/60">Internal</div>
           </div>
           <div>
-            <div className="text-2xl font-bold">{seoData.links.external}</div>
-            <div className="text-sm text-white/60">External</div>
+            <div className="tw:text-2xl tw:font-bold">{seoData.links.external}</div>
+            <div className="tw:text-sm tw:text-white/60">External</div>
           </div>
           <div>
-            <div className="text-2xl font-bold">{seoData.links.unique}</div>
-            <div className="text-sm text-white/60">Unique</div>
+            <div className="tw:text-2xl tw:font-bold">{seoData.links.unique}</div>
+            <div className="tw:text-sm tw:text-white/60">Unique</div>
           </div>
           <div>
-            <div className="text-2xl font-bold">{seoData.links.withTitle}</div>
-            <div className="text-sm text-white/60">With Title</div>
+            <div className="tw:text-2xl tw:font-bold">{seoData.links.withTitle}</div>
+            <div className="tw:text-sm tw:text-white/60">With Title</div>
           </div>
         </div>,
       )}
@@ -404,25 +406,25 @@ export const Seo = () => {
       {/* Social Meta */}
       {renderSection(
         'Social Meta',
-        <div className="space-y-6">
+        <div className="tw:space-y-6">
           <div>
-            <div className="mb-2 text-sm font-bold text-white/80">Open Graph</div>
-            <div className="space-y-2">
+            <div className="tw:mb-2 tw:text-sm tw:font-bold tw:text-white/80">Open Graph</div>
+            <div className="tw:space-y-2">
               {Object.entries(seoData.social.openGraph).map(([key, value]) => (
                 <div key={key}>
-                  <div className="text-xs text-white/60">{key.charAt(0).toUpperCase() + key.slice(1)}</div>
-                  <div className="break-all">{value || '❌ Not found'}</div>
+                  <div className="tw:text-xs tw:text-white/60">{key.charAt(0).toUpperCase() + key.slice(1)}</div>
+                  <div className="tw:break-all">{value || '❌ Not found'}</div>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <div className="mb-2 text-sm font-bold text-white/80">Twitter Card</div>
-            <div className="space-y-2">
+            <div className="tw:mb-2 tw:text-sm tw:font-bold tw:text-white/80">Twitter Card</div>
+            <div className="tw:space-y-2">
               {Object.entries(seoData.social.twitter).map(([key, value]) => (
                 <div key={key}>
-                  <div className="text-xs text-white/60">{key.charAt(0).toUpperCase() + key.slice(1)}</div>
-                  <div className="break-all">{value || '❌ Not found'}</div>
+                  <div className="tw:text-xs tw:text-white/60">{key.charAt(0).toUpperCase() + key.slice(1)}</div>
+                  <div className="tw:break-all">{value || '❌ Not found'}</div>
                 </div>
               ))}
             </div>
@@ -433,10 +435,10 @@ export const Seo = () => {
       {/* External Tools */}
       {renderSection(
         'External Tools',
-        <div className="space-y-3">
-          <div className="grid grid-cols-2 gap-4">
+        <div className="tw:space-y-3">
+          <div className="tw:grid tw:grid-cols-2 tw:gap-4">
             <a
-              className="flex items-center gap-2 bg-white/10 px-3 py-2 text-sm hover:bg-white/20"
+              className="tw:flex tw:items-center tw:gap-2 tw:bg-white/10 tw:px-3 tw:py-2 tw:text-sm tw:hover:tw:bg-white/20"
               href={`https://developers.google.com/speed/pagespeed/insights/?url=${encodeURIComponent(seoData.url.current)}`}
               rel="noopener noreferrer"
               target="_blank"
@@ -444,7 +446,7 @@ export const Seo = () => {
               🚀 PageSpeed Insights
             </a>
             <a
-              className="flex items-center gap-2 bg-white/10 px-3 py-2 text-sm hover:bg-white/20"
+              className="tw:flex tw:items-center tw:gap-2 tw:bg-white/10 tw:px-3 tw:py-2 tw:text-sm tw:hover:tw:bg-white/20"
               href={`https://search.google.com/test/mobile-friendly?url=${encodeURIComponent(seoData.url.current)}`}
               rel="noopener noreferrer"
               target="_blank"
@@ -452,7 +454,7 @@ export const Seo = () => {
               📱 Mobile-Friendly Test
             </a>
             <a
-              className="flex items-center gap-2 bg-white/10 px-3 py-2 text-sm hover:bg-white/20"
+              className="tw:flex tw:items-center tw:gap-2 tw:bg-white/10 tw:px-3 tw:py-2 tw:text-sm tw:hover:tw:bg-white/20"
               href={`https://search.google.com/test/rich-results?url=${encodeURIComponent(seoData.url.current)}`}
               rel="noopener noreferrer"
               target="_blank"
@@ -460,7 +462,7 @@ export const Seo = () => {
               🔍 Rich Results Test
             </a>
             <a
-              className="flex items-center gap-2 bg-white/10 px-3 py-2 text-sm hover:bg-white/20"
+              className="tw:flex tw:items-center tw:gap-2 tw:bg-white/10 tw:px-3 tw:py-2 tw:text-sm tw:hover:tw:bg-white/20"
               href={`https://developers.facebook.com/tools/debug/?q=${encodeURIComponent(seoData.url.current)}`}
               rel="noopener noreferrer"
               target="_blank"
