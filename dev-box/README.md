@@ -1,57 +1,123 @@
-# react-lib
+# 🛠️ DevBox
 
-This is the core React library package within the monorepo.
+A powerful and customizable developer toolbox for React applications that helps with debugging, inspecting, and analyzing web pages.
 
-## Description
+https://github.com/user-attachments/assets/aa546c62-f2ec-4063-898d-b01558972a2f
 
-React library (You should replace this with a more specific description of what your library does).
+## ✨ Features
 
-## Installation
+DevBox includes several powerful tools to assist developers:
 
-This package is intended to be used within the monorepo or published to a registry like npm.
+- **Screen Size**: Shows the current viewport dimensions.
+- **Environment Mode**: Displays the current environment (development, production, etc.).
+- **Cursor Position**: Tracks cursor position coordinates.
+- **Date/Time**: Shows current date and time.
+- **CSS Debug**: Outlines all elements on the page for visual debugging.
+- **Ruler**: Interactive grid and measurement tool for checking dimensions.
+- **Inspector**: Examine DOM elements, styles, and properties.
+- **Design Mode**: Makes the entire document editable in-place.
+- **Draw**: Annotate the page with freehand drawing.
+- **SEO**: Analyzes page SEO elements and metadata.
+- **Console**: View console logs directly in the DevBox panel.
 
-If you are developing within this monorepo, pnpm workspaces handle the linking automatically after running `pnpm install` in the root directory.
-
-If published, you would install it like any other package:
+## 📦 Installation
 
 ```bash
-npm install react-lib # or yarn add react-lib or pnpm add react-lib
+# npm
+npm install @breno.polanski/dev-box
+
+# yarn
+yarn add @breno.polanski/dev-box
+
+# pnpm
+pnpm add @breno.polanski/dev-box
+
+# bun
+bun add @breno.polanski/dev-box
 ```
 
-## Usage
+## 🚀 Usage
 
 ```jsx
-// Example of how to import and use components from this library
-// (Update this section once you have components)
-import { YourComponent } from 'react-lib'
+import { DevBox } from '@breno.polanski/dev-box'
 
 function App() {
-  return <YourComponent />
+  return (
+    <div>
+      <h1>My App</h1>
+      {/* Add DevBox to your application */}
+      <DevBox />
+    </div>
+  )
 }
 ```
 
-## Development
+## ⚙️ Configuration
 
-Navigate to the root of the monorepo to run development scripts.
+DevBox is highly configurable. You can customize which features are shown and their position:
 
-### Build
-
-To build the library once:
-
-```bash
-pnpm build --filter=react-lib
+```jsx
+<DevBox
+  position="bottom-left" // or "bottom-right"
+  showScreenSize={true}
+  showCssDebugButton={true}
+  showRulerButton={true}
+  showInspectorButton={true}
+  showDesignModeButton={true}
+  showDrawButton={true}
+  showSeoButton={true}
+  showConsoleButton={true}
+  showEnvMode={true}
+  showCursorPosition={true}
+  showDateTime={true}
+  featureVisibility={{
+    screenSize: 'all',
+    cssDebug: 'desktop',
+    ruler: 'all',
+    // Configure visibility per device for each feature
+    // Options: 'desktop', 'mobile', 'all', 'none'
+  }}
+/>
 ```
 
-### Watch Mode
+## ⌨️ Keyboard Shortcuts
 
-To build the library and watch for changes:
+DevBox provides convenient keyboard shortcuts for quick access to all features:
+
+| Shortcut              | Description             |
+| --------------------- | ----------------------- |
+| Shift + D             | Toggle DevBox Panel     |
+| Shift + T             | Minimize/Maximize Panel |
+| Shift + O             | Toggle CSS Debug        |
+| Shift + R             | Toggle Ruler            |
+| Shift + I             | Toggle Inspector        |
+| Shift + E             | Toggle Design Mode      |
+| Shift + W             | Toggle Draw Mode        |
+| Escape (in Draw mode) | Clear Drawing           |
+| Shift + S             | Show SEO Panel          |
+| Shift + L             | Toggle Console          |
+| ?                     | Show Help Panel         |
+| Escape                | Close Active Panel      |
+
+## 🔧 Development
+
+This project uses `pnpm` for package management.
 
 ```bash
-pnpm dev --filter=react-lib
+# Install dependencies
+pnpm install
+
+# Build the library
+pnpm build
+
+# Develop with hot reloading
+pnpm dev
 ```
 
-This uses `tsup` to bundle the library into `dist/` with CommonJS (.js), ES Module (.mjs), and TypeScript definition (.d.ts) outputs.
+## 🤝 Contributing
 
-## License
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-MIT License.
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
