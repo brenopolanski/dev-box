@@ -1,2 +1,3 @@
+'use client'
+
 export * from './DevBox'
-export * from './providers/DevBoxProviders'

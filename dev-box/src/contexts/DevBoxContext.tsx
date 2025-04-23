@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 
 import { IS_DEV, STORAGE_KEYS } from '../constants'
