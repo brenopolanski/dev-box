@@ -135,15 +135,23 @@ export const DevBoxPanel = ({
       <Inspector.Panel />
       <Draw.ClearButton />
 
-      <MaximizeButton className={isMinimized ? 'flex' : 'hidden'} onClick={() => setIsMinimized(false)} />
+      <MaximizeButton
+        className={cn('border-0', {
+          'border-t border-l': position === 'bottom-right',
+          'border-t border-r': position === 'bottom-left',
+          flex: isMinimized,
+          hidden: !isMinimized,
+        })}
+        onClick={() => setIsMinimized(false)}
+      />
 
       <div
         className={cn(
-          `${CSS_NAMESPACE}-panel border-primary/20 pointer-events-auto fixed bottom-0 z-[2147483647] w-fit border bg-black/90 font-mono text-[12px] text-white`,
+          `${CSS_NAMESPACE}-panel border-primary/20 pointer-events-auto fixed bottom-0 z-[2147483647] w-fit bg-black/90 font-mono text-[12px] text-white`,
           {
             hidden: isMinimized,
-            'left-0': position === 'bottom-left',
-            'right-0': position === 'bottom-right',
+            'left-0 border-t border-r': position === 'bottom-left',
+            'right-0 border-t border-l': position === 'bottom-right',
           },
           className,
         )}

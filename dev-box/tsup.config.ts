@@ -7,6 +7,7 @@ export default defineConfig({
   entry: ['src/index.ts'], // Your library's entry point
   external: ['react', 'react-dom'], // Specify external dependencies (like React)
   format: ['cjs', 'esm'], // Output formats
+  injectStyle: true, // Inject the styles into the output
   minify: true, // Minify the output
   sourcemap: false, // Generate source maps
   splitting: false, // Split the output into multiple files
