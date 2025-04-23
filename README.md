@@ -6,105 +6,112 @@ https://github.com/user-attachments/assets/aa546c62-f2ec-4063-898d-b01558972a2f
 
 ## ✨ Features
 
-- 🚀 **Turborepo**: High-performance build system for monorepos.
-- 📦 **pnpm**: Fast, disk space-efficient package manager.
-- ⚛️ **React**: JavaScript library for building user interfaces.
-- 🔒 **TypeScript**: Typed superset of JavaScript.
-- 🛠️ **tsup**: Simple and fast TypeScript bundler powered by esbuild.
-- 💅 **TailwindCSS**: Utility-first CSS framework.
-- 📋 **ESLint & Prettier**: Code linting and formatting.
+DevBox includes several powerful tools to assist developers:
 
-## 📁 Project Structure
+- **Screen Size**: Shows the current viewport dimensions.
+- **Environment Mode**: Displays the current environment (development, production, etc.).
+- **Cursor Position**: Tracks cursor position coordinates.
+- **Date/Time**: Shows current date and time.
+- **CSS Debug**: Outlines all elements on the page for visual debugging.
+- **Ruler**: Interactive grid and measurement tool for checking dimensions.
+- **Inspector**: Examine DOM elements, styles, and properties.
+- **Design Mode**: Makes the entire document editable in-place.
+- **Draw**: Annotate the page with freehand drawing.
+- **SEO**: Analyzes page SEO elements and metadata.
+- **Console**: View console logs directly in the DevBox panel.
 
-The repository is structured as a monorepo:
-
-```
-.
-├── examples/                 # Example projects using the library
-│   └── nextjs/               # Next.js examples
-│       └── app-router/       # Next.js App Router example
-├── dev-box/                  # The developer toolbox source code
-│   ├── src/                  # Library source files
-│   ├── package.json          # Library package configuration
-│   └── tsup.config.ts        # tsup build configuration
-├── scripts/                  # Utility scripts
-├── .editorconfig             # Editor configuration
-├── .gitignore                # Git ignore rules
-├── .prettierignore           # Prettier ignore rules
-├── LICENSE                   # Project License
-├── package.json              # Root package configuration
-├── pnpm-lock.yaml            # pnpm lock file
-├── pnpm-workspace.yaml       # pnpm workspace configuration
-├── prettier.config.mjs       # Prettier configuration
-└── turbo.json                # Turborepo configuration
-```
-
-- **`dev-box/`**: Contains the source code for the developer toolbox library. This is where you'll find all the components, utilities, and tools for debugging and analyzing web pages.
-- **`examples/`**: Contains example projects demonstrating how to use the library in different frameworks and scenarios.
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (>= 18)
-- [pnpm](https://pnpm.io/) (>= 9)
-
-### Installation
-
-Clone the repository and install dependencies:
+## 📦 Installation
 
 ```bash
-git clone git@github.com:brenopolanski/dev-box.git
-cd dev-box
+# npm
+npm install @breno.polanski/dev-box
+
+# yarn
+yarn add @breno.polanski/dev-box
+
+# pnpm
+pnpm add @breno.polanski/dev-box
+
+# bun
+bun add @breno.polanski/dev-box
+```
+
+## 🚀 Usage
+
+```jsx
+import { DevBox } from '@breno.polanski/dev-box'
+
+function App() {
+  return (
+    <div>
+      <h1>My App</h1>
+      {/* Add DevBox to your application */}
+      <DevBox />
+    </div>
+  )
+}
+```
+
+## ⚙️ Configuration
+
+DevBox is highly configurable. You can customize which features are shown and their position:
+
+```jsx
+<DevBox
+  position="bottom-left" // or "bottom-right"
+  showScreenSize={true}
+  showCssDebugButton={true}
+  showRulerButton={true}
+  showInspectorButton={true}
+  showDesignModeButton={true}
+  showDrawButton={true}
+  showSeoButton={true}
+  showConsoleButton={true}
+  showEnvMode={true}
+  showCursorPosition={true}
+  showDateTime={true}
+  featureVisibility={{
+    screenSize: 'all',
+    cssDebug: 'desktop',
+    ruler: 'all',
+    // Configure visibility per device for each feature
+    // Options: 'desktop', 'mobile', 'all', 'none'
+  }}
+/>
+```
+
+## ⌨️ Keyboard Shortcuts
+
+DevBox provides convenient keyboard shortcuts for quick access to all features:
+
+| Shortcut              | Description             |
+| --------------------- | ----------------------- |
+| Shift + D             | Toggle DevBox Panel     |
+| Shift + T             | Minimize/Maximize Panel |
+| Shift + O             | Toggle CSS Debug        |
+| Shift + R             | Toggle Ruler            |
+| Shift + I             | Toggle Inspector        |
+| Shift + E             | Toggle Design Mode      |
+| Shift + W             | Toggle Draw Mode        |
+| Escape (in Draw mode) | Clear Drawing           |
+| Shift + S             | Show SEO Panel          |
+| Shift + L             | Toggle Console          |
+| ?                     | Show Help Panel         |
+| Escape                | Close Active Panel      |
+
+## 🔧 Development
+
+This project uses `pnpm` for package management.
+
+```bash
+# Install dependencies
 pnpm install
-```
 
-### Development
-
-To start the development server for the library (watches for changes and rebuilds):
-
-```bash
-pnpm dev --filter=dev-box
-```
-
-To start the development server for an example project (e.g., Next.js app router):
-
-```bash
-pnpm dev --filter=nextjs-app-router
-```
-
-### Build
-
-To build the library for production:
-
-```bash
-pnpm build --filter=dev-box
-```
-
-To build all packages in the monorepo:
-
-```bash
+# Build the library
 pnpm build
-```
 
-### Linting and Formatting
-
-To lint the codebase:
-
-```bash
-pnpm lint
-```
-
-To fix linting issues:
-
-```bash
-pnpm lint:fix
-```
-
-To format the codebase:
-
-```bash
-pnpm format
+# Develop with hot reloading
+pnpm dev
 ```
 
 ## 🤝 Contributing
