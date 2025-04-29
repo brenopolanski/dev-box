@@ -1,6 +1,6 @@
 {
   "name": "@breno.polanski/dev-box",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A powerful and customizable developer toolbox for React applications that helps with debugging, inspecting, and analyzing web pages.",
   "license": "MIT",
   "author": {
