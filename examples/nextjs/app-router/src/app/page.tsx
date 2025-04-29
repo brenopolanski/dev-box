@@ -43,57 +43,57 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-md bg-blue-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-blue-700">Screen Size</h3>
-              <p className="text-sm text-gray-600">Shows current viewport dimensions</p>
+              <p className="text-sm text-gray-600">Shows current viewport dimensions.</p>
             </div>
 
             <div className="rounded-md bg-green-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-green-700">Environment Mode</h3>
-              <p className="text-sm text-gray-600">Displays current environment (development/production)</p>
+              <p className="text-sm text-gray-600">Displays current environment (development/production).</p>
             </div>
 
             <div className="rounded-md bg-purple-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-purple-700">Cursor Position</h3>
-              <p className="text-sm text-gray-600">Shows real-time cursor coordinates</p>
+              <p className="text-sm text-gray-600">Shows real-time cursor coordinates.</p>
             </div>
 
             <div className="rounded-md bg-yellow-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-yellow-700">Date & Time</h3>
-              <p className="text-sm text-gray-600">Displays current date and time</p>
+              <p className="text-sm text-gray-600">Displays current date and time.</p>
             </div>
 
             <div className="rounded-md bg-red-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-red-700">CSS Debug</h3>
-              <p className="text-sm text-gray-600">Highlight HTML elements for CSS debugging</p>
+              <p className="text-sm text-gray-600">Highlight HTML elements for CSS debugging.</p>
             </div>
 
             <div className="rounded-md bg-indigo-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-indigo-700">Ruler</h3>
-              <p className="text-sm text-gray-600">Measure dimensions and distances on the page</p>
+              <p className="text-sm text-gray-600">Measure dimensions and distances on the page.</p>
             </div>
 
             <div className="rounded-md bg-pink-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-pink-700">Inspector</h3>
-              <p className="text-sm text-gray-600">Inspect and analyze HTML elements</p>
+              <p className="text-sm text-gray-600">Inspect and analyze HTML elements.</p>
             </div>
 
             <div className="rounded-md bg-teal-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-teal-700">Design Mode</h3>
-              <p className="text-sm text-gray-600">Edit content directly in the browser</p>
+              <p className="text-sm text-gray-600">Edit content directly in the browser.</p>
             </div>
 
             <div className="rounded-md bg-orange-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-orange-700">Draw</h3>
-              <p className="text-sm text-gray-600">Draw and annotate on the page</p>
+              <p className="text-sm text-gray-600">Draw and annotate on the page.</p>
             </div>
 
             <div className="rounded-md bg-cyan-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-cyan-700">SEO</h3>
-              <p className="text-sm text-gray-600">Analyze page for SEO optimization</p>
+              <p className="text-sm text-gray-600">Analyze page for SEO optimization.</p>
             </div>
 
             <div className="rounded-md bg-lime-50 p-4 shadow">
               <h3 className="mb-2 font-medium text-lime-700">Console</h3>
-              <p className="text-sm text-gray-600">View console logs directly on the page</p>
+              <p className="text-sm text-gray-600">View console logs directly on the page.</p>
             </div>
           </div>
         </section>

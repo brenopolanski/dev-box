@@ -46,7 +46,6 @@ export const DevBoxPanel = ({
   const isMobile = useIsMobile()
 
   const seoActive = toolState.seo
-  const toggleSeo = () => toggleTool('seo')
 
   // Check feature visibility based on device type
   const shouldShowScreenSize = shouldShowFeature('screenSize', showScreenSize, featureVisibility, isMobile)
@@ -80,6 +79,17 @@ export const DevBoxPanel = ({
     shouldShowConsoleButton,
   ].filter(Boolean).length
 
+  const toggleHelp = React.useCallback(() => {
+    // @ts-ignore
+    setShowHelp((showHelp) => !showHelp)
+    toggleTool('seo', false)
+  }, [setShowHelp, toggleTool])
+
+  const toggleSeo = React.useCallback(() => {
+    setShowHelp(false)
+    toggleTool('seo', !seoActive)
+  }, [setShowHelp, toggleTool, seoActive])
+
   // Global keyboard shortcut handler
   React.useEffect(() => {
     const handleGlobalKeyDown = (event: KeyboardEvent) => {
@@ -107,13 +117,12 @@ export const DevBoxPanel = ({
 
       if (isKeyboardShortcut(event, '?', true)) {
         event.preventDefault()
-        // @ts-ignore
-        setShowHelp((showHelp) => !showHelp)
+        toggleHelp()
       }
 
       if (isKeyboardShortcut(event, 's', true)) {
         event.preventDefault()
-        toggleTool('seo', !seoActive)
+        toggleSeo()
       }
     }
 
@@ -122,7 +131,7 @@ export const DevBoxPanel = ({
     return () => {
       document.removeEventListener('keydown', handleGlobalKeyDown)
     }
-  }, [seoActive, setIsMinimized, setShowDevBox, setShowHelp, showDevBox, toggleTool])
+  }, [setIsMinimized, setShowDevBox, setShowHelp, showDevBox, toggleHelp, toggleSeo, toggleTool])
 
   if (isMinimizedLoading || !showDevBox) {
     return null
@@ -202,7 +211,7 @@ export const DevBoxPanel = ({
                 )}
                 {/* Help Button */}
                 <td className="tw:flex">
-                  <Help.Button onClick={() => setShowHelp(!showHelp)} />
+                  <Help.Button onClick={toggleHelp} />
                 </td>
                 {/* Minimize Button */}
                 <td className="tw:flex">

@@ -8,17 +8,17 @@ https://github.com/user-attachments/assets/aa546c62-f2ec-4063-898d-b01558972a2f
 
 DevBox includes several powerful tools to assist developers:
 
-- **Screen Size**: Shows the current viewport dimensions.
-- **Environment Mode**: Displays the current environment (development, production, etc.).
-- **Cursor Position**: Tracks cursor position coordinates.
-- **Date/Time**: Shows current date and time.
-- **CSS Debug**: Outlines all elements on the page for visual debugging.
-- **Ruler**: Interactive grid and measurement tool for checking dimensions.
-- **Inspector**: Examine DOM elements, styles, and properties.
-- **Design Mode**: Makes the entire document editable in-place.
-- **Draw**: Annotate the page with freehand drawing.
-- **SEO**: Analyzes page SEO elements and metadata.
-- **Console**: View console logs directly in the DevBox panel.
+- **Screen Size**: Shows current viewport dimensions.
+- **Environment Mode**: Displays current environment (development, production, and etc).
+- **Cursor Position**: Shows real-time cursor coordinates.
+- **Date/Time**: Displays current date and time.
+- **CSS Debug**: Highlight HTML elements for CSS debugging.
+- **Ruler**: Measure dimensions and distances on the page.
+- **Inspector**: Inspect and analyze HTML elements.
+- **Design Mode**: Edit content directly in the browser.
+- **Draw**: Draw and annotate on the page.
+- **SEO**: Analyze page for SEO optimization.
+- **Console**: View console logs directly on the page.
 
 ## 📦 Installation
 
