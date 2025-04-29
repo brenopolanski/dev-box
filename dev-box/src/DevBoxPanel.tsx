@@ -124,7 +124,7 @@ export const DevBoxPanel = ({
     }
   }, [seoActive, setIsMinimized, setShowDevBox, setShowHelp, showDevBox, toggleTool])
 
-  if (!showDevBox || isMinimizedLoading) {
+  if (isMinimizedLoading || !showDevBox) {
     return null
   }
 
@@ -147,7 +147,7 @@ export const DevBoxPanel = ({
 
       <div
         className={cn(
-          `${CSS_NAMESPACE}-panel tw:border-primary/20 tw:pointer-events-auto tw:fixed tw:bottom-0 tw:z-[2147483647] tw:w-fit tw:bg-black/90 tw:font-mono tw:text-[12px] tw:text-white`,
+          `${CSS_NAMESPACE}-panel tw:border-white/20 tw:pointer-events-auto tw:fixed tw:bottom-0 tw:z-[2147483647] tw:w-fit tw:bg-black/90 tw:font-mono tw:text-[12px] tw:text-white`,
           {
             'tw:hidden': isMinimized,
             'tw:left-0 tw:border-t tw:border-r': position === 'bottom-left',

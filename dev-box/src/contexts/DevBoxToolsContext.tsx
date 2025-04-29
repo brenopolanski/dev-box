@@ -59,15 +59,24 @@ export const DevBoxToolsProvider = ({ children }: React.PropsWithChildren) => {
     setToolState((prev) => {
       const newState = forcedState !== undefined ? forcedState : !prev[tool]
 
-      // If we're activating a tool, disable others
+      // Create a new state object
+      const updatedState = { ...prev }
+
+      // First, set all tools to false except the one we're toggling
       if (newState) {
-        disableAllExcept(tool)
-      } else if (!newState && prev[tool]) {
-        // If we're forcing the current active state to false, disable all
-        disableAllExcept(null)
+        Object.keys(updatedState).forEach((key) => {
+          const toolKey = key as keyof IDevBoxToolState
+
+          if (toolKey !== tool) {
+            updatedState[toolKey] = false
+          }
+        })
       }
 
-      return { ...prev, [tool]: newState }
+      // Then set the current tool's state
+      updatedState[tool] = newState
+
+      return updatedState
     })
   }
 
